@@ -36,7 +36,7 @@ private class NotNullSingleValueVar<T> : ReadWriteProperty<Any?, T> {
 }
 
 
-private class Preference<T>(val context: Context, val name: String, val default: T)
+ class Preference<T>(val context: Context, val name: String, val default: T)
     : ReadWriteProperty<Any?, T> {
 
     val prefs: SharedPreferences by lazy {

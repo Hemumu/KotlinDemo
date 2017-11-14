@@ -1,6 +1,5 @@
 package com.helin.kotlindemo.fragment.pic
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -25,6 +24,8 @@ class ClassifyPicFragment : Fragment() {
     private var mType: Int by notNullSingleValue()
     private var mData: MutableList<Huaban> = ArrayList()
     private var mPage: Int = 1
+    private var mIsInited: Boolean = false
+    private var mIsPrepared: Boolean = false
     private var mLoading by Delegates.observable(true) { _, _, new ->
         mSwipeRefreshLayout.isRefreshing = new
     }
@@ -38,18 +39,22 @@ class ClassifyPicFragment : Fragment() {
         mType = arguments.getInt(EXTRA_TYPE)
         initView()
         initEvent()
-        loadData()
+        mIsPrepared = true
+        lazyLoad()
     }
 
-    override fun onDetach() {
-        super.onDetach()
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        if (isVisibleToUser)
+            lazyLoad()
     }
 
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
+    fun  lazyLoad(){
+        if (getUserVisibleHint() && mIsPrepared && !mIsInited) {
+            //异步初始化，在初始化后显示正常UI
+            loadData()
+        }
     }
-
 
     private fun initView() {
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary)
@@ -94,6 +99,7 @@ class ClassifyPicFragment : Fragment() {
                     mData.addAll(data)
                     mRecyclerView.adapter.notifyDataSetChanged()
                 }
+                mIsInited = true
             }
         }
     }

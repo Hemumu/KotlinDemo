@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import com.helin.kotlindemo.base.BaseActivity
+import com.helin.kotlindemo.base.Preference
 import com.helin.kotlindemo.fragment.gif.GifFragment
 import com.helin.kotlindemo.fragment.pic.PicFragment
 import com.helin.kotlindemo.fragment.text.TextFragment
@@ -22,6 +23,8 @@ class MainActivity : BaseActivity() {
 
     val mFragments: Array<Fragment> = arrayOf(TextFragment(), PicFragment(), GifFragment())
 
+
+    var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
     var mCurrentIndex: Int by Delegates.observable(0) {
         _, _, new ->
