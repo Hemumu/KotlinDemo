@@ -23,6 +23,7 @@ class MainActivity : BaseActivity() {
 
     val mFragments: Array<Fragment> = arrayOf(TextFragment(), PicFragment(), GifFragment())
 
+    val mPre:Int =1
 
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 

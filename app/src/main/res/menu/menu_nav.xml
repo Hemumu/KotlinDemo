@@ -29,8 +29,6 @@
                 android:id="@+id/nav_about"
                 android:icon="@drawable/about"
                 android:title="关于应用" />
-
-
         </menu>
     </item>
 
