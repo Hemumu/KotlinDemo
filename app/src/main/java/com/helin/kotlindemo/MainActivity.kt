@@ -25,6 +25,8 @@ class MainActivity : BaseActivity() {
 
     val mPre:Int =1
 
+
+    val  msdf:Int = 321
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
     var mCurrentIndex: Int by Delegates.observable(0) {
