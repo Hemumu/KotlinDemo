@@ -24,6 +24,7 @@ class MainActivity : BaseActivity() {
     val mFragments: Array<Fragment> = arrayOf(TextFragment(), PicFragment(), GifFragment())
 
     val mPre:Int =1
+    val  msdfsdf:Int = 1231
 
 
     val  msdf:Int = 321
