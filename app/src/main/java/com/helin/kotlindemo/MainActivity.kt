@@ -27,6 +27,8 @@ class MainActivity : BaseActivity() {
 
     val te:String ="he lin fenzhi "
 
+
+    val  msdf:Int = 321
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
     var mCurrentIndex: Int by Delegates.observable(0) {
