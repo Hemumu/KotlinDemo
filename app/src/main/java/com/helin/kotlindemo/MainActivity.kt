@@ -25,6 +25,8 @@ class MainActivity : BaseActivity() {
 
     val mPrexsfs: String = "zhufenzhi"
 
+    val te:String ="he lin fenzhi "
+
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
     var mCurrentIndex: Int by Delegates.observable(0) {
