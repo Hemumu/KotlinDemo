@@ -24,7 +24,7 @@ class MainActivity : BaseActivity() {
     val mFragments: Array<Fragment> = arrayOf(TextFragment(), PicFragment(), GifFragment())
 
 
-    val te:String ="zhu fen zhi"
+    val te:String ="he lin fenzhi "
 
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
