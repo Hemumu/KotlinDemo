@@ -23,8 +23,8 @@ class MainActivity : BaseActivity() {
 
     val mFragments: Array<Fragment> = arrayOf(TextFragment(), PicFragment(), GifFragment())
 
-    val mPre:Int =1
-    val  msdfsdf:Int = 1231
+
+    val te:String ="zhu fen zhi"
 
     var lastTime :Int by Preference(this@MainActivity, "sp_key_default_fragment", 0)
 
